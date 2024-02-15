@@ -1,0 +1,129 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Already have an account?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вече имате акаунт?"
+          }
+        }
+      }
+    },
+    "Don't have and account?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нямате акаунт?"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имейл"
+          }
+        }
+      }
+    },
+    "Forgot Password" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Забравена парола"
+          }
+        }
+      }
+    },
+    "Forgot Password?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Забравена парола?"
+          }
+        }
+      }
+    },
+    "Full Name" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Две имена"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здравей, свят!"
+          }
+        }
+      }
+    },
+    "Login" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Влезте"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Парола"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
+
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистриране"
+          }
+        }
+      }
+    },
+    "Sign up!" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрирайте се!"
+          }
+        }
+      }
+    },
+    "Username" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никнейм"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
