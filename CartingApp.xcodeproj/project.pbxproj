@@ -176,6 +176,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D87CD3B52B7F54810087DB01 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D87CE4872B7E56CE00A3E2E0 /* Authentication */,
+				D87CD3B62B7F54890087DB01 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D87CD3B62B7F54890087DB01 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				D87CD3B82B7F549C0087DB01 /* ViewModels */,
+				D87CD3B72B7F54950087DB01 /* Views */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		D87CD3B72B7F54950087DB01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D87CE4702B7E50B200A3E2E0 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D87CD3B82B7F549C0087DB01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D87CE5172B7E769700A3E2E0 /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D87CE4622B7E50B200A3E2E0 = {
 			isa = PBXGroup;
 			children = (
@@ -195,13 +229,11 @@
 		D87CE46D2B7E50B200A3E2E0 /* CartingApp */ = {
 			isa = PBXGroup;
 			children = (
+				D87CD3B52B7F54810087DB01 /* Core */,
 				D87CE5122B7E744C00A3E2E0 /* Models */,
 				D87CE50F2B7E740C00A3E2E0 /* Services */,
 				D87CE4922B7E5A3400A3E2E0 /* Util */,
-				D87CE4872B7E56CE00A3E2E0 /* Authentication */,
 				D87CE46E2B7E50B200A3E2E0 /* CartingApp.swift */,
-				D87CE4702B7E50B200A3E2E0 /* ContentView.swift */,
-				D87CE5172B7E769700A3E2E0 /* ContentViewModel.swift */,
 				D87CE4722B7E50B400A3E2E0 /* Assets.xcassets */,
 				D87CE49C2B7E63AE00A3E2E0 /* GoogleService-Info.plist */,
 				D87CE4742B7E50B400A3E2E0 /* Preview Content */,
