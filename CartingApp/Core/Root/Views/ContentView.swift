@@ -15,15 +15,7 @@ struct ContentView: View {
     var body: some View {
         Group{
             if viewModel.userSession != nil{
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-                Button {
-                    AuthService.shared.signOut()
-                } label:{
-                    Text("Sign Out")
-                }
+                CartingTabView()
             } else {
                 LoginView()
             }

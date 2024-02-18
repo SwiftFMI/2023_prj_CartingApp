@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ThreadsTextViewModifier: ViewModifier{
+struct TextViewModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .padding(12)
@@ -20,7 +20,7 @@ struct ThreadsTextViewModifier: ViewModifier{
     }
 }
 
-struct ThreadsButtonViewModifier: ViewModifier{
+struct ButtonViewModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .font(.subheadline)

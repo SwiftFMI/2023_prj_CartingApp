@@ -17,11 +17,11 @@ struct LoginView: View {
                 Spacer()
                 VStack{
                     TextField("Email", text: $viewModel.email)
-                        .modifier(ThreadsTextViewModifier())
+                        .modifier(TextViewModifier())
 
                     
                     SecureField("Password", text: $viewModel.password)
-                        .modifier(ThreadsTextViewModifier())
+                        .modifier(TextViewModifier())
 
                     
                 }
@@ -43,7 +43,7 @@ struct LoginView: View {
                     Task {try await viewModel.loginUser()}
                 } label: {
                     Text("Login")
-                        .modifier(ThreadsButtonViewModifier())
+                        .modifier(ButtonViewModifier())
                 }
                 
                 Spacer()

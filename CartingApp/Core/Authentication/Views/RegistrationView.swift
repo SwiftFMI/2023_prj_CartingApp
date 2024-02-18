@@ -20,23 +20,23 @@ struct RegistrationView: View {
             Spacer()
             VStack{
                 TextField("Email", text: $viewModel.email)
-                    .modifier(ThreadsTextViewModifier())
+                    .modifier(TextViewModifier())
                 
                 SecureField("Password", text: $viewModel.password)
-                    .modifier(ThreadsTextViewModifier())
+                    .modifier(TextViewModifier())
                 
                 TextField("Full Name", text: $viewModel.fullname)
-                    .modifier(ThreadsTextViewModifier())
+                    .modifier(TextViewModifier())
                 
                 TextField("Username", text: $viewModel.username)
-                    .modifier(ThreadsTextViewModifier())
+                    .modifier(TextViewModifier())
                 
             } .padding()
             Button {
                 Task{ try await viewModel.createUser()}
             } label: {
                 Text("Sign Up")
-                    .modifier(ThreadsButtonViewModifier())
+                    .modifier(ButtonViewModifier())
             }
             Spacer()
             

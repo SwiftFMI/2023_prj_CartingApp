@@ -1,6 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "2000 Followes" : {
+
+    },
+    "Add Firend" : {
+
+    },
+    "AddFriend" : {
+
+    },
     "Already have an account?" : {
       "localizations" : {
         "bg" : {
@@ -11,6 +20,12 @@
         }
       }
     },
+    "Cancel" : {
+
+    },
+    "Change photo" : {
+
+    },
     "Don't have and account?" : {
       "localizations" : {
         "bg" : {
@@ -20,6 +35,12 @@
           }
         }
       }
+    },
+    "Done" : {
+
+    },
+    "Edit Profile" : {
+
     },
     "Email" : {
       "localizations" : {
@@ -81,6 +102,9 @@
         }
       }
     },
+    "Name" : {
+
+    },
     "Password" : {
       "localizations" : {
         "bg" : {
@@ -90,6 +114,9 @@
           }
         }
       }
+    },
+    "Search" : {
+
     },
     "Sign Out" : {
 
