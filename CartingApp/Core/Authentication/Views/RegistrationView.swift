@@ -28,7 +28,7 @@ struct RegistrationView: View {
                 TextField("Full Name", text: $viewModel.fullname)
                     .modifier(TextViewModifier())
                 
-                TextField("Username", text: $viewModel.username)
+                TextField("Nickname", text: $viewModel.nickname)
                     .modifier(TextViewModifier())
                 
             } .padding()

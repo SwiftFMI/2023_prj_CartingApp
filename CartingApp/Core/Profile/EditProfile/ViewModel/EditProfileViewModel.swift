@@ -11,6 +11,9 @@ import SwiftUI
 
 class EditProfileViewModel: ObservableObject{
     @Published var currentUser: User?
+    @Published var newNickname = ""
+    @Published var newPassword = ""
+
     @Published var selectedItem: PhotosPickerItem?{
         didSet { Task {await loadImage() }}
     }
@@ -20,6 +23,8 @@ class EditProfileViewModel: ObservableObject{
     
     func updateUerData() async throws{
         try await updateProfileImage()
+        try await updateUserNickname()
+        try await updateUserPassword()
     }
     
     @MainActor
@@ -31,11 +36,20 @@ class EditProfileViewModel: ObservableObject{
         self.profileImage = Image(uiImage: uiImage)
     }
     
-    private func updateProfileImage() async throws{
+    private func updateProfileImage() async throws {
         guard let image = self.uiImage else {return}
         guard let imageUrl = try? await ImageUploader.uploadImage(image) else {return}
         try await UserService.shared.updateUserProfileImage(withImageUrl: imageUrl)
         
     }
     
+    func updateUserNickname() async throws {
+        if newNickname.isEmpty {return}
+        try await UserService.shared.updateUserNickname(newNickname: newNickname)
+    }
+
+    func updateUserPassword() async throws {
+        if newPassword.isEmpty { return }
+        try await UserService.shared.updateUserPassword(newPassowrd: newPassword)
+    }
 }

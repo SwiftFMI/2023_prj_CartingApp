@@ -19,23 +19,14 @@ struct ProfileHeaderView: View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 4){
-                    //fullname and username
                     Text(user?.fullname ?? "")
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text(user?.username ?? "")
+                    Text(user?.nickname ?? "")
                         .font(.subheadline)
                         .font(.caption2)
                     
                 }
-                if let bio = user?.bio {
-                    Text(bio)
-                        .font(.footnote)
-                }
-                
-                Text("2000 Followes")
-                    .font(.caption)
-                    .font(.caption2)
             }
             Spacer()
             CircleProfileImageView()

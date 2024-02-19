@@ -13,7 +13,7 @@ import FirebaseFirestore
 class RegistrationViewModel: ObservableObject{
     @Published var email = ""
     @Published var password = ""
-    @Published var username = ""
+    @Published var nickname = ""
     @Published var fullname = ""
     
     @MainActor
@@ -22,7 +22,7 @@ class RegistrationViewModel: ObservableObject{
             withEmail: email,
             password: password,
             fullname: fullname,
-            username: username
+            nickname: nickname
         )
     }
 }

@@ -49,4 +49,21 @@ class UserService {
         self.currentUser?.profileImageUrl = imageUrl
         
     }
+    
+    @MainActor
+    func updateUserNickname(newNickname: String) async throws {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        try await Firestore.firestore().collection("users").document(currentUid).updateData([
+            "nickname": newNickname,
+        ])
+        try await fetchCurrentUser()
+    }
+    
+    @MainActor
+    func updateUserPassword(newPassowrd: String) async throws {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        try await Firestore.firestore().collection("users").document(currentUid).updateData([
+            "password": newPassowrd,
+        ])
+    }
 }

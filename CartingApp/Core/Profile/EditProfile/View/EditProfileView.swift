@@ -37,12 +37,14 @@ struct EditProfileView: View {
                                 image
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 40, height:40)
+                                    .frame(width: ProfileImage.width, height: ProfileImage.height)
                                     .clipShape(Circle())
                             } else {
                                 HStack {
                                     Text("Change photo")
+                                        .foregroundColor(.blue)
                                     CircleProfileImageView()
+                                        .frame(width: ProfileImage.width, height: ProfileImage.height)
                                 }
                             }
                         }
@@ -50,6 +52,33 @@ struct EditProfileView: View {
                     
                     Divider()
                     
+                    Section(header: Text("Change Nickname").fontWeight(.semibold)) {
+                        TextField("Enter new nickname", text: $viewModel.newNickname)
+                            .font(.footnote)
+                            .padding()
+                            .background(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(.systemGray4), lineWidth: 1)
+                            }
+                            .padding()
+                    }
+                    
+                    Divider()
+                    
+                    Section(header: Text("Change Password").fontWeight(.semibold)) {
+                        SecureField("Enter new password", text: $viewModel.newPassword)
+                            .font(.footnote)
+                            .padding()
+                            .background(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color(.systemGray4), lineWidth: 1)
+                            }
+                            .padding()
+                    }
                     
                 }
                 .font(.footnote)

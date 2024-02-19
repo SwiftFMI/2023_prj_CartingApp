@@ -13,7 +13,7 @@ struct CircleProfileImageView: View {
         Image("BioProfilePicture")
             .resizable()
             .scaledToFill()
-            .frame(width: 40, height: 40)
+            .frame(width: ProfileImage.width, height: ProfileImage.height)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
     }
 }

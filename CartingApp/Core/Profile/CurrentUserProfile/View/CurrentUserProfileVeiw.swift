@@ -20,7 +20,6 @@ struct CurrentUserProfileView: View {
     var body: some View {
         NavigationStack{
             ScrollView (showsIndicators: false) {
-                //bio and stats
                 VStack (spacing:20){
                     ProfileHeaderView(user: currentUser)
                     
@@ -38,7 +37,6 @@ struct CurrentUserProfileView: View {
                                 RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray4), lineWidth: 1)
                             }
                     }
-                    //user content list view
                     UserContentListView()
                 }
                 

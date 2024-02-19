@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "2000 Followes" : {
-
-    },
     "Add Firend" : {
 
     },
@@ -21,6 +18,12 @@
       }
     },
     "Cancel" : {
+
+    },
+    "Change Nickname" : {
+
+    },
+    "Change Password" : {
 
     },
     "Change photo" : {
@@ -51,6 +54,12 @@
           }
         }
       }
+    },
+    "Enter new nickname" : {
+
+    },
+    "Enter new password" : {
+
     },
     "Forgot Password" : {
       "localizations" : {
@@ -105,6 +114,9 @@
     "Name" : {
 
     },
+    "Nickname" : {
+
+    },
     "Password" : {
       "localizations" : {
         "bg" : {
@@ -142,6 +154,7 @@
       }
     },
     "Username" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {

@@ -16,7 +16,7 @@ struct UserCell: View {
             CircleProfileImageView()
             VStack (alignment:.leading, spacing:4){
                 HStack{
-                    Text(user.username)
+                    Text(user.nickname)
                         .fontWeight(.semibold)
                     
                 }
