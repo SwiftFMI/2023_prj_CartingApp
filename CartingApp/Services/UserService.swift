@@ -58,12 +58,8 @@ class UserService {
         ])
         try await fetchCurrentUser()
     }
-    
-    @MainActor
-    func updateUserPassword(newPassowrd: String) async throws {
-        guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        try await Firestore.firestore().collection("users").document(currentUid).updateData([
-            "password": newPassowrd,
-        ])
+
+    func sendPasswordResetEmail(email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
     }
 }

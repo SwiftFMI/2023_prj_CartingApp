@@ -20,4 +20,9 @@ class LoginViewModel: ObservableObject{
             password: password
         )
     }
+    
+    func sendPasswordResetEmail() async throws {
+        if email.isEmpty {return}
+        try await UserService.shared.sendPasswordResetEmail(email: email)
+    }
 }

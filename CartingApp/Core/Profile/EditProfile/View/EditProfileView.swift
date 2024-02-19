@@ -67,17 +67,11 @@ struct EditProfileView: View {
                     
                     Divider()
                     
-                    Section(header: Text("Change Password").fontWeight(.semibold)) {
-                        SecureField("Enter new password", text: $viewModel.newPassword)
-                            .font(.footnote)
-                            .padding()
-                            .background(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay{
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color(.systemGray4), lineWidth: 1)
-                            }
-                            .padding()
+                    Button {
+                        Task {try await viewModel.sendPasswordResetEmail()}
+                    } label: {
+                        Text("send password reset email")
+                            .modifier(ButtonViewModifier())
                     }
                     
                 }

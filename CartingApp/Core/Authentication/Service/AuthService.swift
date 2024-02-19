@@ -49,7 +49,6 @@ class AuthService{
     
     @MainActor
     private func uploadUserData(
-        
         id: String,
         withEmail email: String,
         fullname:String,

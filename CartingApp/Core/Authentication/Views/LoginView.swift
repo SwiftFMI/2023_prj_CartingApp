@@ -27,7 +27,17 @@ struct LoginView: View {
                 }
                 .padding(.horizontal,30)
                 NavigationLink {
-                    Text("Forgot Password")
+                    TextField("Email", text: $viewModel.email)
+                        .modifier(TextViewModifier())
+                        .padding(.horizontal,30)
+
+                    Button {
+                        Task {try await viewModel.sendPasswordResetEmail()}
+                    } label: {
+                        Text("send password reset email")
+                            .modifier(ButtonViewModifier())
+                    }
+                    .padding(20)
                     
                 }  label: {
                     Text("Forgot Password?")

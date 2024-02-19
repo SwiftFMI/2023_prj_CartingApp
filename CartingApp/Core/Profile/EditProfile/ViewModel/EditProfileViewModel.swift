@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import Combine
 import PhotosUI
 import SwiftUI
 
 class EditProfileViewModel: ObservableObject{
     @Published var currentUser: User?
     @Published var newNickname = ""
-    @Published var newPassword = ""
 
     @Published var selectedItem: PhotosPickerItem?{
         didSet { Task {await loadImage() }}
@@ -21,10 +21,22 @@ class EditProfileViewModel: ObservableObject{
     
     private var uiImage: UIImage?
     
+    private var cancelables = Set<AnyCancellable>()
+    
+    init() {
+        setupSubscribers()
+    }
+    
+    private func setupSubscribers(){
+        UserService.shared.$currentUser.sink { [weak self] user in
+            self?.currentUser = user
+//            print("Debug: User in view model from combine is \(user)")
+        }.store( in: &cancelables )
+    }
+    
     func updateUerData() async throws{
         try await updateProfileImage()
         try await updateUserNickname()
-        try await updateUserPassword()
     }
     
     @MainActor
@@ -43,13 +55,14 @@ class EditProfileViewModel: ObservableObject{
         
     }
     
+    @MainActor
     func updateUserNickname() async throws {
         if newNickname.isEmpty {return}
         try await UserService.shared.updateUserNickname(newNickname: newNickname)
     }
 
-    func updateUserPassword() async throws {
-        if newPassword.isEmpty { return }
-        try await UserService.shared.updateUserPassword(newPassowrd: newPassword)
+    func sendPasswordResetEmail() async throws {
+        guard let email = currentUser?.email else {return}
+        try await UserService.shared.sendPasswordResetEmail(email: email)
     }
 }

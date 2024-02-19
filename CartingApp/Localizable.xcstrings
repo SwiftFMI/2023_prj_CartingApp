@@ -23,9 +23,6 @@
     "Change Nickname" : {
 
     },
-    "Change Password" : {
-
-    },
     "Change photo" : {
 
     },
@@ -58,10 +55,8 @@
     "Enter new nickname" : {
 
     },
-    "Enter new password" : {
-
-    },
     "Forgot Password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -128,6 +123,9 @@
       }
     },
     "Search" : {
+
+    },
+    "send password reset email" : {
 
     },
     "Sign Out" : {
