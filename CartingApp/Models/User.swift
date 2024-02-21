@@ -12,5 +12,6 @@ struct User: Identifiable, Codable, Hashable{
     let fullname: String
     let email: String
     let nickname: String
+    let bestTime: Double?
     var profileImageUrl: String?
 }

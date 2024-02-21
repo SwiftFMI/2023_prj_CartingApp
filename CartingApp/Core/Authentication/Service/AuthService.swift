@@ -42,9 +42,9 @@ class AuthService{
     }
     
     func signOut(){
-        try? Auth.auth().signOut() //sign out from firebase
-        self.userSession = nil //sign out from session locally
-        UserService.shared.reset() //sets current user to nil
+        try? Auth.auth().signOut() // sign out from firebase
+        self.userSession = nil // sign out from session locally
+        UserService.shared.reset() // sets current user to nil
     }
     
     @MainActor
@@ -54,7 +54,7 @@ class AuthService{
         fullname:String,
         nickname:String
     ) async throws{
-        let user = User(id: id, fullname: fullname, email: email, nickname: nickname)
+        let user = User(id: id, fullname: fullname, email: email, nickname: nickname, bestTime: nil)
         guard let userData =  try? Firestore.Encoder().encode(user) else {return}
         try await Firestore.firestore().collection("users").document(id).setData(userData)
         UserService.shared.currentUser = user

@@ -15,21 +15,13 @@ struct CartingTabView: View {
         TabView(selection: $selectedTab)  {
             CurrentUserProfileView()
                 .tabItem {
-                    Image(systemName: selectedTab == 0 ? "house.fill" : "house")
+                    Image(systemName: selectedTab == 0 ? "person.fill" : "person")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill: .none)
-                }
-                .onAppear{ selectedTab = 0}.tag(0)
-            
+                }.onAppear{ selectedTab = 0}.tag(0)
             ExploreView()
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
                             }.onAppear{ selectedTab = 1}.tag(1)
-            
-            CurrentUserProfileView()
-                .tabItem {
-                    Image(systemName: selectedTab == 2 ? "person.fill" : "person")
-                        .environment(\.symbolVariants, selectedTab == 2 ? .fill: .none)
-                }.onAppear{ selectedTab = 2}.tag(2)
         }
         .tint(.black)
     }

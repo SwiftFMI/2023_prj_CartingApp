@@ -37,7 +37,9 @@ struct CurrentUserProfileView: View {
                                 RoundedRectangle(cornerRadius: 10).stroke(Color(.systemGray4), lineWidth: 1)
                             }
                     }
-                    UserContentListView()
+                    if let user = currentUser{
+                        UserContentView(user: user)
+                    }
                 }
                 
             }
