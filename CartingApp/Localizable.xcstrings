@@ -107,13 +107,13 @@
         }
       }
     },
+    "Load Leaderboard" : {
+
+    },
     "Load More Better" : {
 
     },
     "Load More Worse" : {
-
-    },
-    "Load Users" : {
 
     },
     "Login" : {
@@ -132,6 +132,9 @@
     "Nickname" : {
 
     },
+    "OK" : {
+
+    },
     "Password" : {
       "localizations" : {
         "bg" : {
@@ -141,6 +144,9 @@
           }
         }
       }
+    },
+    "Registration" : {
+
     },
     "Search" : {
 
@@ -181,9 +187,6 @@
           }
         }
       }
-    },
-    "Welcome, %@" : {
-
     }
   },
   "version" : "1.0"
