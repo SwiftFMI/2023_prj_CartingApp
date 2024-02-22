@@ -18,10 +18,14 @@ struct CartingTabView: View {
                     Image(systemName: selectedTab == 0 ? "person.fill" : "person")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill: .none)
                 }.onAppear{ selectedTab = 0}.tag(0)
+            SessionsView()
+                .tabItem{
+                    Image(systemName: "flag.checkered.2.crossed")
+                }.onAppear{selectedTab = 1}.tag(1)
             ExploreView()
                             .tabItem {
                                 Image(systemName: "magnifyingglass")
-                            }.onAppear{ selectedTab = 1}.tag(1)
+                            }.onAppear{ selectedTab = 2}.tag(2)
         }
         .tint(.black)
     }

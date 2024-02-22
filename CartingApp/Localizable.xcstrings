@@ -1,15 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld. %@ - %.2f" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld. %2$@ - %3$.2f"
-          }
-        }
-      }
+    "%lld" : {
+
     },
     "Add Firend" : {
 
@@ -26,6 +19,9 @@
           }
         }
       }
+    },
+    "Best lap: " : {
+
     },
     "Cancel" : {
 
@@ -97,7 +93,6 @@
       }
     },
     "Hello, world!" : {
-      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -106,6 +101,9 @@
           }
         }
       }
+    },
+    "Leaderboard" : {
+
     },
     "Load Leaderboard" : {
 
@@ -125,6 +123,9 @@
           }
         }
       }
+    },
+    "must be som" : {
+
     },
     "Name" : {
 
@@ -152,6 +153,9 @@
 
     },
     "send password reset email" : {
+
+    },
+    "Sessions" : {
 
     },
     "Sign Out" : {

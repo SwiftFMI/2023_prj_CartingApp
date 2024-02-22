@@ -20,9 +20,19 @@ struct LeaderboardView: View {
             Button("Load More Better") {
                 loadMoreWorseTimes()
             }
-            ForEach(leaderboard.sorted(by: { $0.key < $1.key }), id: \.key) { rank, user in
-                Text("\(rank). \(user.fullname) - \(user.bestTime ?? 0, specifier: "%.2f")")
+            VStack{
+                Text("Leaderboard")
+                                .font(.title)
+                                .padding(.bottom, 10)
+                ScrollView{
+                    
+                    ForEach(leaderboard.sorted(by: { $0.key < $1.key }), id: \.key) { rank, user in
+//                        Text("\(rank). \(user.fullname) - \(user.bestTime ?? 0, specifier: "%.2f")")
+                        LeaderboardEntryView(position: rank, name: user.fullname, bestLapTime: user.bestTime ?? 0)
+                    }
+                }
             }
+//            .background(Color.gray.opacity(0.1))
             
             VStack {
                 Button("Load Leaderboard") {
@@ -41,6 +51,7 @@ struct LeaderboardView: View {
         Task {
             do {
                 let leaderboardData = try await LeaderboardService.shared.fetchLeaderboardForUser(userId: currentUser.id)
+                
                 self.leaderboard = leaderboardData
             } catch {
                 print("Error fetching leaderboard: \(error)")
