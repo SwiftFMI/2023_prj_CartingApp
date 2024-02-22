@@ -13,3 +13,10 @@ struct Session: Identifiable, Codable, Hashable{
     let startTime: Date
     let endTime: Date
 }
+
+struct SessionElement: Identifiable, Codable, Hashable{
+    let startTime: Date
+    let id: String
+    let username: String
+    let lapTime: Double
+}

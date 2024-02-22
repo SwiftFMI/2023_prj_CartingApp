@@ -40,4 +40,17 @@ class SessionsService {
 
         return session
     }
+    
+    func fetchUserBestLapInSession(userId: String, sessionId: String) async throws -> [Lap]{
+        let lapsSnapshot = try await Firestore.firestore()
+            .collection("sessions")
+            .document(sessionId)
+            .collection("laps")
+            .order(by: "lapTime", descending: false)
+            .getDocuments()
+
+        let lapsData = lapsSnapshot.documents.compactMap({try? $0.data(as: Lap.self)})
+        return lapsData
+    }
+
 }

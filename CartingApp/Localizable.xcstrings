@@ -32,6 +32,9 @@
     "Change photo" : {
 
     },
+    "Date: %@" : {
+
+    },
     "Don't have and account?" : {
       "localizations" : {
         "bg" : {
@@ -123,9 +126,6 @@
           }
         }
       }
-    },
-    "must be som" : {
-
     },
     "Name" : {
 
