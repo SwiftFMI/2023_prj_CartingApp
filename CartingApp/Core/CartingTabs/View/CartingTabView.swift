@@ -19,9 +19,9 @@ struct CartingTabView: View {
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill: .none)
                 }.onAppear{ selectedTab = 0}.tag(0)
             ExploreView()
-                            .tabItem {
-                                Image(systemName: "magnifyingglass")
-                            }.onAppear{ selectedTab = 1}.tag(1)
+                .tabItem{
+                    Image(systemName: "magnifyingglass")
+                }.onAppear{selectedTab = 1}.tag(1)
         }
         .tint(.black)
     }

@@ -7,80 +7,109 @@
 
 import Foundation
 import SwiftUI
-import Firebase
 
 struct LeaderboardView: View {
+    @StateObject var viewModel = LeaderboardViewModel()
     let currentUser: User
-    @State private var leaderboard: [Int: User] = [:]
-    @State private var lastBetterDocument: DocumentSnapshot?
-    @State private var lastWorseDocument: DocumentSnapshot?
     
     var body: some View {
-        VStack {
-            Button("Load More Better") {
-                loadMoreWorseTimes()
+        ZStack {
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 10) {
+                            leaderboardHeader
+                            Divider()
+                            if viewModel.leaderboard.isEmpty {
+                                Text("Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!")
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                    .foregroundColor(.gray)
+                            } else {
+                                leaderboardContent
+                            }
+                        }
+                        .padding(.bottom, 10)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.white)
+                    .cornerRadius(15)
+                    .shadow(radius: 10)
+                    .padding()
+                }
             }
-            ForEach(leaderboard.sorted(by: { $0.key < $1.key }), id: \.key) { rank, user in
-                Text("\(rank). \(user.fullname) - \(user.bestTime ?? 0, specifier: "%.2f")")
+            .onAppear {
+                viewModel.fetchInitialLeaderboard(userId: currentUser.id)
+            }
+        }
+    }
+    
+    var leaderboardContent: some View {
+        ForEach(Array(viewModel.leaderboard.keys.sorted()), id: \.self) { rank in
+            if let user = viewModel.leaderboard[rank] {
+                LeaderboardEntryView(position: rank,
+                                     user: user,
+                                     isCurrentUser: user.id == currentUser.id)
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+    }
+    
+    
+    var leaderboardHeader: some View {
+        HStack(alignment: .center) {
+            Image(systemName: "list.number")
+                .font(.title2)
+                .frame(alignment: .center)
+            Text("Leaderboard")
+                .font(.title2)
+                .fontWeight(.bold)
+                .frame(alignment: .center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 10)
+    }
+}
+
+struct LeaderboardEntryView: View {
+    let position: Int
+    let user: User
+    var isCurrentUser: Bool = false
+    
+    var body: some View {
+        HStack(spacing: 8) {
+            CircleProfileImageView(user: user)
+                .frame(width: StandardImage.width, height: StandardImage.height)
+            
+            // Nickname and Best Time
+            VStack(alignment: .leading, spacing: 4) {
+                Text(user.nickname)
+                    .bold()
+                    .font(.system(size: 14))
+                if let bestLapTime = user.bestTime {
+                    Text(String(format: "%.2f", bestLapTime))
+                        .font(.system(size: 14))
+                } else {
+                    Text("N/A")
+                        .font(.system(size: 14))
+                }
             }
             
-            VStack {
-                Button("Load Leaderboard") {
-                    fetchInitialLeaderboard()
-                }
-                
-                Button("Load More Worse") {
-                    loadMoreWorseTimes()
-                }
-            }
+            Spacer()
+            
+            // Rank
+            Text("#\(position)")
+                .bold()
+                .font(.system(size: 14))
+                .padding(6)
+                .background(isCurrentUser ? Color.blue.opacity(0.2) : Color.clear)
+                .clipShape(Circle())
         }
-    }
-    
-    // Initial fetch for the current user's leaderboard position
-    func fetchInitialLeaderboard() {
-        Task {
-            do {
-                let leaderboardData = try await LeaderboardService.shared.fetchLeaderboardForUser(userId: currentUser.id)
-                self.leaderboard = leaderboardData
-            } catch {
-                print("Error fetching leaderboard: \(error)")
-            }
-        }
-    }
-    
-    // Load more users with better (lower) best times
-    func loadMoreBetterTimes() {
-        guard let bestTime = leaderboard.values.min(by: { $0.bestTime ?? Double.infinity < $1.bestTime ?? Double.infinity })?.bestTime else { return }
-        
-        Task {
-            do {
-                let (users, lastDocument) = try await LeaderboardService.shared.fetchUsersWithBetterTimes(startingAfterDocument: lastBetterDocument, bestTime: bestTime)
-                lastBetterDocument = lastDocument
-                for user in users {
-                    // todo
-                }
-                // Update leaderboard state
-            } catch {
-                print("Error loading more better times: \(error)")
-            }
-        }
-    }
-    
-    // Load more users with worse (higher) best times
-    func loadMoreWorseTimes() {
-        guard let worseTime = leaderboard.values.max(by: { $0.bestTime ?? 0 < $1.bestTime ?? 0 })?.bestTime else { return }
-        
-        Task {
-            do {
-                let (users, lastDocument) = try await LeaderboardService.shared.fetchUsersWithWorseTimes(startingAfterDocument: lastWorseDocument, worseTime: worseTime)
-                lastWorseDocument = lastDocument
-                for user in users {
-                    // todo
-                }
-                // Update leaderboard state
-            } catch {
-                print("Error loading more worse times: \(error)")
-            }
-        }
+        .padding(8)
+        .background(isCurrentUser ? Color.blue.opacity(0.1) : Color.gray.opacity(0.1))
+        .cornerRadius(5)
     }
 }

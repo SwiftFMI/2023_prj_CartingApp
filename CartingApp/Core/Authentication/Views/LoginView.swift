@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     
     @StateObject var viewModel = LoginViewModel()
+    @State private var showAlert =  false;
+    @State private var alertMessage = "";
     
     var body: some View {
         NavigationStack{
@@ -50,10 +52,19 @@ struct LoginView: View {
                 } .padding(10)
                 
                 Button {
-                    Task {try await viewModel.loginUser()}
+                    Task {
+                        do{
+                            try await viewModel.loginUser()
+                        }catch{
+                                showAlert = true
+                                alertMessage = error.localizedDescription
+                            }
+                    }
                 } label: {
                     Text("Login")
                         .modifier(ButtonViewModifier())
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text("Login"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
                 
                 Spacer()

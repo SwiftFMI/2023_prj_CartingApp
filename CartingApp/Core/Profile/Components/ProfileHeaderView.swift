@@ -19,17 +19,28 @@ struct ProfileHeaderView: View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 12) {
                 VStack(alignment: .leading, spacing: 4){
-                    Text(user?.fullname ?? "")
+                    Text(user?.nickname ?? "")
                         .font(.title2)
                         .fontWeight(.semibold)
-                    Text(user?.nickname ?? "")
+                    
+                    Text(user?.fullname ?? "")
                         .font(.subheadline)
                         .font(.caption2)
-                    
+                }
+                if let bestTime = user?.bestTime {
+                    HStack{
+                        Spacer()
+                        Text("Best time: \(bestTime, specifier: "%.2f")")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
                 }
             }
             Spacer()
-            CircleProfileImageView()
+            if let hasUser = user {
+                CircleProfileImageView(user: hasUser)
+                    .frame(width: ProfileImage.width, height: ProfileImage.height)
+            }
         }.padding()
     }
 }

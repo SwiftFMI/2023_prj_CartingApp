@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147F9BCB2B88C39C00176189 /* LapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F9BCA2B88C39C00176189 /* LapsView.swift */; };
+		147F9BD02B88CA6100176189 /* LapEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F9BCF2B88CA6100176189 /* LapEntry.swift */; };
+		14CD42C42B8698CD005E2CBC /* SessionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CD42C32B8698CD005E2CBC /* SessionsViewModel.swift */; };
+		D80A22EF2B888AB2009434E2 /* LapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A22EE2B888AB2009434E2 /* LapService.swift */; };
+		D80A22F32B889A31009434E2 /* LastSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A22F22B889A31009434E2 /* LastSessionView.swift */; };
+		D80A22F52B889A45009434E2 /* AllSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A22F42B889A45009434E2 /* AllSessionsView.swift */; };
+		D80A22FA2B889A8D009434E2 /* SessionEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A22F92B889A8D009434E2 /* SessionEntryView.swift */; };
 		D81409302B827C2100D78D62 /* CartingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D814092F2B827C2100D78D62 /* CartingTabView.swift */; };
 		D81409352B8280BF00D78D62 /* CurrentUserProfileVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81409342B8280BF00D78D62 /* CurrentUserProfileVeiw.swift */; };
 		D81409372B82816D00D78D62 /* CurrentUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81409362B82816D00D78D62 /* CurrentUserProfileViewModel.swift */; };
@@ -102,9 +109,17 @@
 		D87CE5162B7E74EA00A3E2E0 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CE5152B7E74EA00A3E2E0 /* ViewModifiers.swift */; };
 		D87CE5182B7E769700A3E2E0 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CE5172B7E769700A3E2E0 /* ContentViewModel.swift */; };
 		D8AF29DD2B836D6100C9D761 /* ProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF29DC2B836D6100C9D761 /* ProfileConstants.swift */; };
+		D8F526A52B8803F70007C595 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F526A42B8803F70007C595 /* LeaderboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147F9BCA2B88C39C00176189 /* LapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsView.swift; sourceTree = "<group>"; };
+		147F9BCF2B88CA6100176189 /* LapEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapEntry.swift; sourceTree = "<group>"; };
+		14CD42C32B8698CD005E2CBC /* SessionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewModel.swift; sourceTree = "<group>"; };
+		D80A22EE2B888AB2009434E2 /* LapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapService.swift; sourceTree = "<group>"; };
+		D80A22F22B889A31009434E2 /* LastSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSessionView.swift; sourceTree = "<group>"; };
+		D80A22F42B889A45009434E2 /* AllSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSessionsView.swift; sourceTree = "<group>"; };
+		D80A22F92B889A8D009434E2 /* SessionEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEntryView.swift; sourceTree = "<group>"; };
 		D814092F2B827C2100D78D62 /* CartingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartingTabView.swift; sourceTree = "<group>"; };
 		D81409342B8280BF00D78D62 /* CurrentUserProfileVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileVeiw.swift; sourceTree = "<group>"; };
 		D81409362B82816D00D78D62 /* CurrentUserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +157,7 @@
 		D87CE5152B7E74EA00A3E2E0 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		D87CE5172B7E769700A3E2E0 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		D8AF29DC2B836D6100C9D761 /* ProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstants.swift; sourceTree = "<group>"; };
+		D8F526A42B8803F70007C595 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +230,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147F9BC72B88C36F00176189 /* Laps */ = {
+			isa = PBXGroup;
+			children = (
+				147F9BC92B88C38D00176189 /* VIew */,
+			);
+			path = Laps;
+			sourceTree = "<group>";
+		};
+		147F9BC92B88C38D00176189 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				147F9BCA2B88C39C00176189 /* LapsView.swift */,
+				147F9BCF2B88CA6100176189 /* LapEntry.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		14CD42BC2B869033005E2CBC /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				D80A22F82B889A7A009434E2 /* Components */,
+				D80A22F12B889A1E009434E2 /* Views */,
+				D80A22F02B889A15009434E2 /* ViewModel */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		D80A22F02B889A15009434E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				14CD42C32B8698CD005E2CBC /* SessionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D80A22F12B889A1E009434E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D80A22F22B889A31009434E2 /* LastSessionView.swift */,
+				D80A22F42B889A45009434E2 /* AllSessionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D80A22F82B889A7A009434E2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D80A22F92B889A8D009434E2 /* SessionEntryView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D81409262B8279E500D78D62 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +437,7 @@
 		D875DA0D2B864E8100374ABA /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				D8F526A32B8803E20007C595 /* ViewModel */,
 				D875DA0E2B864E8C00374ABA /* View */,
 			);
 			path = Leaderboard;
@@ -385,6 +454,8 @@
 		D87CD3B52B7F54810087DB01 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				147F9BC72B88C36F00176189 /* Laps */,
+				14CD42BC2B869033005E2CBC /* Sessions */,
 				D875DA0D2B864E8100374ABA /* Leaderboard */,
 				D875D9FE2B8612AD00374ABA /* UserContent */,
 				D814092D2B827BFF00D78D62 /* CartingTabs */,
@@ -515,6 +586,7 @@
 				D81409472B8290DE00D78D62 /* ImageUploader.swift */,
 				D875DA052B86135200374ABA /* SessionsService.swift */,
 				D875DA0B2B861B9C00374ABA /* LeaderboardService.swift */,
+				D80A22EE2B888AB2009434E2 /* LapService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -535,6 +607,14 @@
 				D8AF29DC2B836D6100C9D761 /* ProfileConstants.swift */,
 			);
 			path = constants;
+			sourceTree = "<group>";
+		};
+		D8F526A32B8803E20007C595 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8F526A42B8803F70007C595 /* LeaderboardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,8 +756,10 @@
 			files = (
 				D875DA102B864EC800374ABA /* LeaderboardView.swift in Sources */,
 				D87CE5142B7E745A00A3E2E0 /* User.swift in Sources */,
+				D80A22FA2B889A8D009434E2 /* SessionEntryView.swift in Sources */,
 				D875DA082B86171200374ABA /* Session.swift in Sources */,
 				D81409372B82816D00D78D62 /* CurrentUserProfileViewModel.swift in Sources */,
+				D80A22F52B889A45009434E2 /* AllSessionsView.swift in Sources */,
 				D875DA0A2B86182A00374ABA /* Lap.swift in Sources */,
 				D87CE5182B7E769700A3E2E0 /* ContentViewModel.swift in Sources */,
 				D87CE4712B7E50B200A3E2E0 /* ContentView.swift in Sources */,
@@ -688,11 +770,14 @@
 				D81409502B82A90B00D78D62 /* ExploreViewModel.swift in Sources */,
 				D87CE46F2B7E50B200A3E2E0 /* CartingApp.swift in Sources */,
 				D8AF29DD2B836D6100C9D761 /* ProfileConstants.swift in Sources */,
+				147F9BD02B88CA6100176189 /* LapEntry.swift in Sources */,
+				147F9BCB2B88C39C00176189 /* LapsView.swift in Sources */,
 				D81409442B828F2E00D78D62 /* UserProfileView.swift in Sources */,
 				D81409302B827C2100D78D62 /* CartingTabView.swift in Sources */,
 				D814093E2B82829A00D78D62 /* UserCellView.swift in Sources */,
 				D87CE49B2B7E5FA700A3E2E0 /* LoginView.swift in Sources */,
 				D81409402B828F1B00D78D62 /* EditProfileView.swift in Sources */,
+				D80A22F32B889A31009434E2 /* LastSessionView.swift in Sources */,
 				D814094E2B82A90200D78D62 /* ExploreView.swift in Sources */,
 				D875DA0C2B861B9C00374ABA /* LeaderboardService.swift in Sources */,
 				D87CE50E2B7E73B800A3E2E0 /* AuthService.swift in Sources */,
@@ -701,11 +786,14 @@
 				D87CE4942B7E5A4900A3E2E0 /* Theme.swift in Sources */,
 				D875DA032B86130C00374ABA /* UserContentView.swift in Sources */,
 				D87CE5112B7E741B00A3E2E0 /* UserService.swift in Sources */,
+				D80A22EF2B888AB2009434E2 /* LapService.swift in Sources */,
 				D814093C2B82828100D78D62 /* CircleProfileImageView.swift in Sources */,
 				D87CE48F2B7E573700A3E2E0 /* LoginViewModel.swift in Sources */,
 				D81409422B828F2300D78D62 /* EditProfileViewModel.swift in Sources */,
 				D81409352B8280BF00D78D62 /* CurrentUserProfileVeiw.swift in Sources */,
+				14CD42C42B8698CD005E2CBC /* SessionsViewModel.swift in Sources */,
 				D87CE4992B7E5E9400A3E2E0 /* RegistrationView.swift in Sources */,
+				D8F526A52B8803F70007C595 /* LeaderboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

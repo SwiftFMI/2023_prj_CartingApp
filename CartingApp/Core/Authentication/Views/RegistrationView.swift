@@ -11,8 +11,8 @@ import SwiftUI
 struct RegistrationView: View {
     
     @StateObject var viewModel = RegistrationViewModel()
-    
-    
+    @State private var showAlert =  false;
+    @State private var alertMessage = "";
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -33,10 +33,21 @@ struct RegistrationView: View {
                 
             } .padding()
             Button {
-                Task{ try await viewModel.createUser()}
+                Task{
+                    do{
+                        try await viewModel.createUser()
+                        showAlert = true
+                        alertMessage = "Successful registration"
+                    }catch{
+                            showAlert = true
+                            alertMessage = error.localizedDescription
+                        }
+                    }
             } label: {
                 Text("Sign Up")
                     .modifier(ButtonViewModifier())
+            }.alert(isPresented: $showAlert) {
+                Alert(title: Text("Registration"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
             Spacer()
             

@@ -1,15 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld. %@ - %.2f" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld. %2$@ - %3$.2f"
-          }
-        }
-      }
+    "#%lld" : {
+
     },
     "Add Firend" : {
 
@@ -26,6 +19,12 @@
           }
         }
       }
+    },
+    "Best lap: " : {
+
+    },
+    "Best time: %.2f" : {
+
     },
     "Cancel" : {
 
@@ -45,6 +44,12 @@
           }
         }
       }
+    },
+    "Don't have any sessions yet" : {
+
+    },
+    "Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!" : {
+
     },
     "Done" : {
 
@@ -107,13 +112,16 @@
         }
       }
     },
-    "Load More Better" : {
+    "Lap Time: " : {
 
     },
-    "Load More Worse" : {
+    "Laps" : {
 
     },
-    "Load Users" : {
+    "Last Session" : {
+
+    },
+    "Leaderboard" : {
 
     },
     "Login" : {
@@ -126,10 +134,19 @@
         }
       }
     },
+    "N/A" : {
+
+    },
     "Name" : {
 
     },
     "Nickname" : {
+
+    },
+    "No sessions available" : {
+
+    },
+    "OK" : {
 
     },
     "Password" : {
@@ -142,10 +159,22 @@
         }
       }
     },
+    "Registration" : {
+
+    },
     "Search" : {
 
     },
+    "See all sessions" : {
+
+    },
     "send password reset email" : {
+
+    },
+    "Session on %@" : {
+
+    },
+    "Sessions" : {
 
     },
     "Sign Out" : {
@@ -181,9 +210,6 @@
           }
         }
       }
-    },
-    "Welcome, %@" : {
-
     }
   },
   "version" : "1.0"

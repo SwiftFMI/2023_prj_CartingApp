@@ -11,4 +11,5 @@ struct Lap: Identifiable, Codable, Hashable{
     let id: String
     let userId: String
     let lapTime: Double
+    let startTime: Date
 }

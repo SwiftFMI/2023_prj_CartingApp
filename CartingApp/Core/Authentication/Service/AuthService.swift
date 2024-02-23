@@ -22,23 +22,15 @@ class AuthService{
     
     @MainActor
     func loginUser(withEmail email: String, password: String ) async throws{
-        do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
             try await UserService.shared.fetchCurrentUser()
-        } catch {
-            print("DEBUG: Failed to login user with error \(error.localizedDescription)")
-        }
     }
     @MainActor
     func createUser(withEmail email: String, password: String, fullname:String, nickname:String ) async throws{
-        do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             try await uploadUserData(id: result.user.uid, withEmail: email, fullname: fullname, nickname: nickname)
-        } catch {
-            print("DEBUG: Failed to create user with error \(error.localizedDescription)")
-        }
     }
     
     func signOut(){

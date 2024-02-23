@@ -43,7 +43,7 @@ struct EditProfileView: View {
                                 HStack {
                                     Text("Change photo")
                                         .foregroundColor(.blue)
-                                    CircleProfileImageView()
+                                    CircleProfileImageView(user: user)
                                         .frame(width: ProfileImage.width, height: ProfileImage.height)
                                 }
                             }

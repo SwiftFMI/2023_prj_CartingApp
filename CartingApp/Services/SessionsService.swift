@@ -11,33 +11,47 @@ import FirebaseFirestore
 class SessionsService {
     static let shared = SessionsService()
 
-    func fetchUserSessions(userId: String) async throws -> [Session] {
-        let snapshot = try await Firestore.firestore()
-            .collection("sessions")
+    func fetchUserSessionsWithBestLap(userId: String) async throws -> [(bestTime: Double?, session: Session)] {
+        let db = Firestore.firestore()
+        let sessionsSnapshot = try await db.collection("sessions")
             .whereField("participants", arrayContains: userId)
             .order(by: "startTime", descending: true)
             .getDocuments()
-        
-        let sessions = snapshot
-        .documents
-        .compactMap({try? $0.data(as: Session.self)})
-        
-        return sessions
+
+        var sessionsWithBestLap: [(bestTime: Double?, session: Session)] = []
+
+        guard !sessionsSnapshot.documents.isEmpty else {
+            return []
+        }
+
+        for sessionDocument in sessionsSnapshot.documents {
+            guard let session = try? sessionDocument.data(as: Session.self) else { continue }
+            let bestLap = try await LapService.shared
+                .fetchBestLapInSessionForSpecificUser(sessionId: sessionDocument.documentID, userId: userId)
+
+            sessionsWithBestLap.append((bestTime: bestLap?.lapTime, session: session))
+        }
+
+        return sessionsWithBestLap
     }
 
-    func fetchLastUserSession(userId: String) async throws -> Session? {
-        let snapshot = try await Firestore.firestore()
-            .collection("sessions")
+    func fetchLastUserSessionWithBestLap(userId: String) async throws -> (bestTime: Double?, session: Session)? {
+        let db = Firestore.firestore()
+        let sessionSnapshot = try await db.collection("sessions")
             .whereField("participants", arrayContains: userId)
             .order(by: "startTime", descending: true)
             .limit(to: 1)
             .getDocuments()
-        
-        let session = snapshot
-        .documents
-        .compactMap({try? $0.data(as: Session.self)})
-        .first
 
-        return session
+        guard let sessionDocument = sessionSnapshot.documents.first,
+              let session = try? sessionDocument.data(as: Session.self) else {
+            return nil
+        }
+
+        let bestLap = try await LapService.shared
+            .fetchBestLapInSessionForSpecificUser(sessionId: sessionDocument.documentID, userId: userId)
+
+        return (bestTime: bestLap?.lapTime, session: session)
     }
 }
+

@@ -9,15 +9,28 @@ import Foundation
 import SwiftUI
 
 struct CircleProfileImageView: View {
-    var body: some View {
-        Image("BioProfilePicture")
-            .resizable()
-            .scaledToFill()
-            .frame(width: ProfileImage.width, height: ProfileImage.height)
-            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+    var user: User?
+    
+    init(user: User?){
+        self.user = user
     }
-}
-
-#Preview {
-    CircleProfileImageView()
+    
+    var body: some View {
+        if let imageUrl = user?.profileImageUrl, let url = URL(string: imageUrl) {
+            AsyncImage(url: url) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }
+//             .frame(width: ProfileImage.width, height: ProfileImage.height)
+            .clipShape(Circle())
+            .shadow(radius: 5)
+        } else {
+            Image("BioProfilePicture")
+                .resizable()
+                .scaledToFill()
+//                 .frame(width: ProfileImage.width, height: ProfileImage.height)
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+        }
+    }
 }
