@@ -20,7 +20,7 @@
         }
       }
     },
-    "Best Lap: %.2f seconds" : {
+    "Best lap: " : {
 
     },
     "Best time: %.2f" : {
@@ -44,6 +44,9 @@
           }
         }
       }
+    },
+    "Don't have any sessions yet" : {
+
     },
     "Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!" : {
 
@@ -109,6 +112,12 @@
         }
       }
     },
+    "Lap Time: " : {
+
+    },
+    "Laps" : {
+
+    },
     "Last Session" : {
 
     },
@@ -132,9 +141,6 @@
 
     },
     "Nickname" : {
-
-    },
-    "No laps recorded" : {
 
     },
     "No sessions available" : {
@@ -166,6 +172,9 @@
 
     },
     "Session on %@" : {
+
+    },
+    "Sessions" : {
 
     },
     "Sign Out" : {

@@ -13,18 +13,26 @@ struct SessionEntryView: View {
     let bestLapTime: Double?
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Session on \(session.startTime, formatter: itemFormatter)")
-            if let bestTime = bestLapTime {
-                Text("Best Lap: \(bestTime, specifier: "%.2f") seconds")
-            } else {
-                Text("No laps recorded")
+        HStack{
+            CircleProfileImageView(user: UserService.shared.currentUser)
+                .frame(width: StandardImage.width, height: StandardImage.height)
+            // Nickname and Best Time
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Session on \(session.startTime, formatter: itemFormatter)")
+                    .bold()
+                    .font(.system(size: 14))
+                HStack{
+                    Text("Best lap: ")
+                    Text(String(format: "%.2f", bestLapTime ?? 0))
+                        .font(.system(size: 14))
+                }
+            
             }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(10)
+        }   .padding(8)
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(5)
     }
+    
     
     private var itemFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -33,3 +41,5 @@ struct SessionEntryView: View {
         return formatter
     }
 }
+
+

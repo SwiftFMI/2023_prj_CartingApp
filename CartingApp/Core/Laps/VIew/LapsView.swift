@@ -1,43 +1,29 @@
 //
-//  AllSessionsView.swift
+//  LapsView.swift
 //  CartingApp
 //
-//  Created by Stoyan Tinchev on 23.02.24.
+//  Created by Kristian Yodanov on 23.02.24.
 //
 
 import Foundation
 import SwiftUI
 
-struct AllSessionsView: View {
-    @ObservedObject var viewModel: SessionsViewModel
+struct LapsView: View {
+    let userId: String
+    let sessionId: String
     
-    var SessionsContent: some View {
-                ForEach(viewModel.allSessionsWithBestLap, id: \.session.id) { sessionWithLap in
-                    NavigationLink{
-                        LapsView(userId: UserService.shared.currentUser?.id ?? "", sessionId: sessionWithLap.session.id)
-                    }
-                label:{
-                    SessionEntryView(session: sessionWithLap.session, bestLapTime: sessionWithLap.bestTime)
-                        .padding(.horizontal)
-                        .frame(minWidth: 350, alignment: .center)
-                }
-                }
-    }
-    
+    @State var laps: [Lap] = []
     
     var body: some View {
         ZStack {
             VStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 10) {
                             HStack(alignment: .center) {
                                 Image(systemName: "flag.checkered.2.crossed")
                                     .font(.title2)
                                     .frame(alignment: .center)
-                                Text("Sessions")
+                                Text("Laps")
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     .frame(alignment: .center)
@@ -45,13 +31,17 @@ struct AllSessionsView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.top, 10)
                             Divider()
-                            if viewModel.allSessionsWithBestLap.isEmpty {
+                            if laps.isEmpty {
                                 Text("Don't have any sessions yet")
                                     .multilineTextAlignment(.center)
                                     .padding()
                                     .foregroundColor(.gray)
                             } else {
-                                SessionsContent
+                                ForEach(laps, id: \.self){lap in
+                                    LapEntry(lap:lap)
+                                        .frame(width: 350)
+                                }
+                                
                             }
                         }
                         .padding(.bottom, 10)
@@ -64,8 +54,18 @@ struct AllSessionsView: View {
                 }
             }
             .onAppear {
-                viewModel.fetchAllSessionsWithBestLap()
+                Task{
+                    do{
+                        let result = try await LapService.shared.fetchLapsInSessionForSpecificUser(sessionId: self.sessionId, userId: self.userId)
+                        DispatchQueue.main.async {
+                            laps = result
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            print("Error fetching last session: \(error.localizedDescription)")
+                        }
+                    }
+                    }
             }
-        }
     }
 }
