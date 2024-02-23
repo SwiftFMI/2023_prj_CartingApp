@@ -74,7 +74,6 @@ class LeaderboardService {
         return leaderboard
     }
     
-    // Fetch users with better times
     func fetchUsersWithBetterTimes(startingAfterDocument cursorDocument: DocumentSnapshot? = nil, bestTime: Double) async throws -> ([User], DocumentSnapshot?) {
         let db = Firestore.firestore()
         var query = db.collection("users")
@@ -93,7 +92,6 @@ class LeaderboardService {
         return (users, lastDocument)
     }
 
-    // Fetch users with worse times
     func fetchUsersWithWorseTimes(startingAfterDocument cursorDocument: DocumentSnapshot? = nil, worseTime: Double) async throws -> ([User], DocumentSnapshot?) {
         let db = Firestore.firestore()
         var query = db.collection("users")

@@ -14,7 +14,6 @@ struct ProfileView: View {
     var body: some View {
         
         ScrollView (showsIndicators: false) {
-            //bio and stats
             VStack (spacing:20){
                 ProfileHeaderView(user: user)
                 

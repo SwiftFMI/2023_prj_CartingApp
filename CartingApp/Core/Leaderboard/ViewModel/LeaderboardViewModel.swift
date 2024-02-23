@@ -18,7 +18,8 @@ class LeaderboardViewModel: ObservableObject {
         isLoading = true
         Task {
             do {
-                let leaderboardData = try await LeaderboardService.shared.fetchLeaderboardForUser(userId: userId)
+                let leaderboardData = try await LeaderboardService.shared
+                    .fetchLeaderboardForUser(userId: userId)
                 DispatchQueue.main.async {
                     self.leaderboard = leaderboardData
                     self.isLoading = false
@@ -33,12 +34,14 @@ class LeaderboardViewModel: ObservableObject {
     }
     
     func loadMoreBetterTimes(currentUserId: String) {
-        guard !isLoading, let currentUserBestTime = leaderboard.values.first(where: { $0.id == currentUserId })?.bestTime else { return }
+        guard !isLoading, let currentUserBestTime = leaderboard.values
+            .first(where: { $0.id == currentUserId })?.bestTime else { return }
         
         isLoading = true
         Task {
             do {
-                let (users, lastDocument) = try await LeaderboardService.shared.fetchUsersWithBetterTimes(startingAfterDocument: lastBetterDocument, bestTime: currentUserBestTime)
+                let (users, lastDocument) = try await LeaderboardService.shared
+                    .fetchUsersWithBetterTimes(startingAfterDocument: lastBetterDocument, bestTime: currentUserBestTime)
                 DispatchQueue.main.async {
                     // Update the last document for pagination
                     self.lastBetterDocument = lastDocument
@@ -64,12 +67,14 @@ class LeaderboardViewModel: ObservableObject {
     }
 
     func loadMoreWorseTimes(currentUserId: String) {
-        guard !isLoading, let currentUserBestTime = leaderboard.values.first(where: { $0.id == currentUserId })?.bestTime else { return }
+        guard !isLoading, let currentUserBestTime = leaderboard.values
+            .first(where: { $0.id == currentUserId })?.bestTime else { return }
         
         isLoading = true
         Task {
             do {
-                let (users, lastDocument) = try await LeaderboardService.shared.fetchUsersWithWorseTimes(startingAfterDocument: lastWorseDocument, worseTime: currentUserBestTime)
+                let (users, lastDocument) = try await LeaderboardService.shared
+                    .fetchUsersWithWorseTimes(startingAfterDocument: lastWorseDocument, worseTime: currentUserBestTime)
                 DispatchQueue.main.async {
                     // Update the last document for pagination
                     self.lastWorseDocument = lastDocument

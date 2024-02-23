@@ -4,9 +4,6 @@
     "#%lld" : {
 
     },
-    "%lld" : {
-
-    },
     "Add Firend" : {
 
     },
@@ -23,7 +20,7 @@
         }
       }
     },
-    "Best lap: " : {
+    "Best Lap: %.2f seconds" : {
 
     },
     "Best time: %.2f" : {
@@ -36,9 +33,6 @@
 
     },
     "Change photo" : {
-
-    },
-    "Date: %@" : {
 
     },
     "Don't have and account?" : {
@@ -105,6 +99,7 @@
       }
     },
     "Hello, world!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "bg" : {
           "stringUnit" : {
@@ -113,6 +108,9 @@
           }
         }
       }
+    },
+    "Last Session" : {
+
     },
     "Leaderboard" : {
 
@@ -136,6 +134,12 @@
     "Nickname" : {
 
     },
+    "No laps recorded" : {
+
+    },
+    "No sessions available" : {
+
+    },
     "OK" : {
 
     },
@@ -155,10 +159,13 @@
     "Search" : {
 
     },
+    "See all sessions" : {
+
+    },
     "send password reset email" : {
 
     },
-    "Sessions" : {
+    "Session on %@" : {
 
     },
     "Sign Out" : {

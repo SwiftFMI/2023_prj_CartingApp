@@ -14,7 +14,6 @@ struct LeaderboardView: View {
     
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all) // Set the background to white
             VStack {
                 if viewModel.isLoading {
                     ProgressView()
@@ -24,7 +23,6 @@ struct LeaderboardView: View {
                             leaderboardHeader
                             Divider()
                             if viewModel.leaderboard.isEmpty {
-                                // Display a message when there are no entries
                                 Text("Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!")
                                     .multilineTextAlignment(.center)
                                     .padding()

@@ -12,6 +12,11 @@ struct UserContentView: View {
     let user: User
     
     var body: some View {
-        LeaderboardView(currentUser: user)
+        ScrollView {
+            VStack {
+                LastSessionView(viewModel: SessionsViewModel(userId: user.id))
+                LeaderboardView(currentUser: user)
+            }
+        } 
      }
 }
