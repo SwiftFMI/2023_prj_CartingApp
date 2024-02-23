@@ -52,5 +52,4 @@ class SessionsService {
         let lapsData = lapsSnapshot.documents.compactMap({try? $0.data(as: Lap.self)})
         return lapsData
     }
-
 }

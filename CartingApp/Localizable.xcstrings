@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "#%lld" : {
+
+    },
     "%lld" : {
 
     },
@@ -21,6 +24,9 @@
       }
     },
     "Best lap: " : {
+
+    },
+    "Best time: %.2f" : {
 
     },
     "Cancel" : {
@@ -44,6 +50,9 @@
           }
         }
       }
+    },
+    "Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!" : {
+
     },
     "Done" : {
 
@@ -108,15 +117,6 @@
     "Leaderboard" : {
 
     },
-    "Load Leaderboard" : {
-
-    },
-    "Load More Better" : {
-
-    },
-    "Load More Worse" : {
-
-    },
     "Login" : {
       "localizations" : {
         "bg" : {
@@ -126,6 +126,9 @@
           }
         }
       }
+    },
+    "N/A" : {
+
     },
     "Name" : {
 

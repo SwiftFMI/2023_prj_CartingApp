@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct ProfileImage{
-    static let width = 80.0
-    static let height = 80.0
+struct ProfileImage {
+    static let width = 100.0
+    static let height = 100.0
+}
+
+struct StandardImage {
+    static let width = 60.0
+    static let height = 60.0
 }
