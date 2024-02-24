@@ -1,0 +1,216 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "#%lld" : {
+
+    },
+    "Add Firend" : {
+
+    },
+    "AddFriend" : {
+
+    },
+    "Already have an account?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вече имате акаунт?"
+          }
+        }
+      }
+    },
+    "Best lap: " : {
+
+    },
+    "Best time: %.2f" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Change Nickname" : {
+
+    },
+    "Change photo" : {
+
+    },
+    "Don't have and account?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нямате акаунт?"
+          }
+        }
+      }
+    },
+    "Don't have any sessions yet" : {
+
+    },
+    "Don't have any sessions yet.\nNeed to start racing to appear on the leaderboard!" : {
+
+    },
+    "Done" : {
+
+    },
+    "Edit Profile" : {
+
+    },
+    "Email" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имейл"
+          }
+        }
+      }
+    },
+    "Enter new nickname" : {
+
+    },
+    "Forgot Password" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Забравена парола"
+          }
+        }
+      }
+    },
+    "Forgot Password?" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Забравена парола?"
+          }
+        }
+      }
+    },
+    "Full Name" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Две имена"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здравей, свят!"
+          }
+        }
+      }
+    },
+    "Lap Time: " : {
+
+    },
+    "Laps" : {
+
+    },
+    "Last Session" : {
+
+    },
+    "Leaderboard" : {
+
+    },
+    "Login" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Влезте"
+          }
+        }
+      }
+    },
+    "N/A" : {
+
+    },
+    "Name" : {
+
+    },
+    "Nickname" : {
+
+    },
+    "No sessions available" : {
+
+    },
+    "OK" : {
+
+    },
+    "Password" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Парола"
+          }
+        }
+      }
+    },
+    "Registration" : {
+
+    },
+    "Search" : {
+
+    },
+    "See all sessions" : {
+
+    },
+    "send password reset email" : {
+
+    },
+    "Session on %@" : {
+
+    },
+    "Sessions" : {
+
+    },
+    "Sign Out" : {
+
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистриране"
+          }
+        }
+      }
+    },
+    "Sign up!" : {
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регистрирайте се!"
+          }
+        }
+      }
+    },
+    "Username" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "bg" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никнейм"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
